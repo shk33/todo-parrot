@@ -11,6 +11,8 @@ class WelcomeController extends Controller
 {
   function index()
   {
-    return view('home.welcome');
+    $data = array('name' => 'Yucatan',
+                  'date' => date('Y-m-d') );
+    return view('home.welcome')->with($data);
   }
 }
