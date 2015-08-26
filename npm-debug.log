@@ -1,0 +1,44 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/home/miguel/.nvm/v0.12.2/bin/npm', 'install' ]
+2 info using npm@2.13.0
+3 info using node@v0.12.2
+4 verbose readDependencies loading dependencies from /home/miguel/php/todoparrot/package.json
+5 verbose install where, deps [ '/home/miguel/php/todoparrot',
+5 verbose install   [ 'laravel-elixir', 'bootstrap-sass', 'gulp', 'fabpot/goutte' ] ]
+6 verbose install where, peers [ '/home/miguel/php/todoparrot', [] ]
+7 verbose installManyTop reading for lifecycle /home/miguel/php/todoparrot/package.json
+8 info preinstall @
+9 verbose installManyTop reading scoped package data from /home/miguel/php/todoparrot/node_modules/bootstrap-sass/package.json
+10 verbose installManyTop reading scoped package data from /home/miguel/php/todoparrot/node_modules/gulp/package.json
+11 verbose installManyTop reading scoped package data from /home/miguel/php/todoparrot/node_modules/laravel-elixir/package.json
+12 verbose readDependencies loading dependencies from /home/miguel/php/todoparrot/package.json
+13 verbose targetResolver reading package data from /home/miguel/php/todoparrot/node_modules/bootstrap-sass/package.json
+14 verbose targetResolver reading package data from /home/miguel/php/todoparrot/node_modules/gulp/package.json
+15 verbose targetResolver reading package data from /home/miguel/php/todoparrot/node_modules/laravel-elixir/package.json
+16 verbose targetResolver reading package data from /home/miguel/php/todoparrot/node_modules/.bin/gulp/package.json
+17 silly cache add args [ 'fabpot/goutte@^2.0', null ]
+18 verbose cache add spec fabpot/goutte@^2.0
+19 verbose already installed skipping laravel-elixir@^3.0.0 /home/miguel/php/todoparrot
+20 verbose already installed skipping bootstrap-sass@^3.0.0 /home/miguel/php/todoparrot
+21 verbose already installed skipping gulp@^3.8.8 /home/miguel/php/todoparrot
+22 silly cache add parsed spec { raw: 'fabpot/goutte@^2.0',
+22 silly cache add   scope: null,
+22 silly cache add   name: null,
+22 silly cache add   rawSpec: 'fabpot/goutte@^2.0',
+22 silly cache add   spec: '/home/miguel/php/todoparrot/fabpot/goutte@^2.0',
+22 silly cache add   type: 'local' }
+23 error addLocal Could not install /home/miguel/php/todoparrot/fabpot/goutte@^2.0
+24 verbose stack Error: ENOENT, open '/home/miguel/php/todoparrot/fabpot/goutte@^2.0'
+24 verbose stack     at Error (native)
+25 verbose cwd /home/miguel/php/todoparrot
+26 error Linux 3.16.0-45-generic
+27 error argv "node" "/home/miguel/.nvm/v0.12.2/bin/npm" "install"
+28 error node v0.12.2
+29 error npm  v2.13.0
+30 error path /home/miguel/php/todoparrot/fabpot/goutte@^2.0
+31 error code ENOENT
+32 error errno -2
+33 error enoent ENOENT, open '/home/miguel/php/todoparrot/fabpot/goutte@^2.0'
+33 error enoent This is most likely not a problem with npm itself
+33 error enoent and is related to npm not being able to find a file.
+34 verbose exit [ -2, true ]
