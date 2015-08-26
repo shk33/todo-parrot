@@ -8,6 +8,7 @@
   @foreach ($lists as $list)
     <li>{{$list->name}}</li>
   @endforeach
+  {!! $lists->render() !!}
 </ul>
 @else
   <p> No lists found</p>
