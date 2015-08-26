@@ -1,7 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "fabpot/goutte": "2.*"
   },
   "dependencies": {
     "laravel-elixir": "^3.0.0",
