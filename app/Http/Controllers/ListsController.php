@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use todoparrot\Http\Requests;
 use todoparrot\Http\Controllers\Controller;
+use todoparrot\Todolist;
 
 class ListsController extends Controller
 {
@@ -16,7 +17,8 @@ class ListsController extends Controller
    */
   public function index()
   {
-    return view('lists.index');
+    $lists = Todolist::all();
+    return view('lists.index')->with(compact('lists'));
   }
 
   /**
