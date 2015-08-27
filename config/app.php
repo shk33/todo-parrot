@@ -145,6 +145,7 @@ return [
         todoparrot\Providers\RouteServiceProvider::class,
         'Barryvdh\Debugbar\ServiceProvider',
         'Collective\Html\HtmlServiceProvider',
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
     ],
 
     /*
