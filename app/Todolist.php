@@ -24,13 +24,19 @@ class Todolist extends Model implements SluggableInterface
         'save_to'    => 'slug',
   ];
 
-  function validate()
+  public function tasks()
+  {
+    return $this->hasMany('todoparrot\Task');
+  }
+
+  public function validate()
   {
     $v = \Validator::make($this->attributes, $this->rules);
     if ($v->passes()) return true;
     $this->errors = $v->messages();
     return false;
   }
+
   // public function setPasswordAttribute($password)
   // {
   //   $this->attributes['password'] = \Hash::make($password);
