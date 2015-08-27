@@ -29,6 +29,12 @@ class Todolist extends Model implements SluggableInterface
     return $this->hasMany('todoparrot\Task');
   }
 
+  public function categories()
+  {
+    return $this->belongsToMany('todoparrot\Category')
+      ->withTimestamps();
+  }
+
   public function validate()
   {
     $v = \Validator::make($this->attributes, $this->rules);
