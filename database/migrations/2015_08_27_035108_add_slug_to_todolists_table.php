@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class addSlugToTodolistsTable extends Migration {
+class AddSlugToTodolistsTable extends Migration {
 
 	/**
 	 * Run the migrations.
