@@ -2,12 +2,16 @@
 
 namespace todoparrot;
 
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Todolist extends Model
+class Todolist extends Model implements SluggableInterface
 {
 
   use SoftDeletes;
+  use SluggableTrait;
 
   private $rules = [
     'name' => 'required',
@@ -15,6 +19,10 @@ class Todolist extends Model
   ];
   protected $fillable = ['name', 'description'];
   protected $dates = ['deleted_at'];
+  protected $sluggable = [
+        'build_from' => 'name',
+        'save_to'    => 'slug',
+  ];
 
   function validate()
   {

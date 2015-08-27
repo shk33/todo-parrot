@@ -51,7 +51,8 @@ class ListsController extends Controller
    */
   public function show($id)
   {
-    $list = Todolist::findOrFail($id);
+    // $list = Todolist::findOrFail($id);
+    $list = Todolist::findBySlug($id);
     return view('lists.show')->with(compact('list'));
   }
 
