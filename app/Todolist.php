@@ -35,6 +35,11 @@ class Todolist extends Model implements SluggableInterface
       ->withTimestamps();
   }
 
+  public function comments()
+  {
+    return $this->morphMany('\todoparrot\Comment', 'commentable');
+  }
+
   public function validate()
   {
     $v = \Validator::make($this->attributes, $this->rules);
