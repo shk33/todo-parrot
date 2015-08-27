@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todolist extends Model
 {
+
+  use SoftDeletes;
+
   private $rules = [
     'name' => 'required',
     'description' => 'required'
   ];
-
   protected $fillable = ['name', 'description'];
+  protected $dates = ['deleted_at'];
 
   function validate()
   {
