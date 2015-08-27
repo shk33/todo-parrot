@@ -18,7 +18,8 @@ class ListsController extends Controller
   public function index()
   {
     // $lists = Todolist::all();
-    $lists = Todolist::orderBy('created_at','desc')->paginate(10);
+    $lists = Todolist::orderBy('created_at','desc')
+      ->with('comments')->paginate(10);
     return view('lists.index')->with(compact('lists'));
   }
 
