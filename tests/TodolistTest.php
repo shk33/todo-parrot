@@ -15,4 +15,17 @@ class TodolistTest extends TestCase
     $list = new Todolist;
     $this->assertEquals(get_class($list), 'todoparrot\Todolist');
   }
+
+  public function testNoValidWhenNameMissing()
+  {
+    $list = new Todolist;
+    $this->assertFalse($list->validate());
+  }
+
+  public function testTodolistRecordCount()
+  {
+    $listFactory = factory('todoparrot\Todolist')->create();
+    $lists = Todolist::all();
+    $this->assertEquals($lists->count(),1);
+  }
 }

@@ -20,7 +20,7 @@ $factory->define(todoparrot\User::class, function (Faker\Generator $faker) {
   ];
 });
 
-$factory->define(App\Todolist::class, function ($faker) {
+$factory->define(todoparrot\Todolist::class, function ($faker) {
   return [
   'name' => 'blah',
   'description' => $faker->name
