@@ -8,6 +8,12 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
   <body>
-    @yield('content')
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-10">
+          @yield('content')
+        </div>
+      </div>
+    </div>
   </body>
 </html>
