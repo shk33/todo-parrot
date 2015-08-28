@@ -19,7 +19,8 @@
 
 <div class="form-group">
   {!! Form::label('Categories') !!}
-  {!! Form::select('categories', $categories, null,
+  {!! Form::select('categories', $categories, 
+      $selected_categories,
       ['multiple' => 'multiple',
         'name'    => 'categories[]',
         'class'   =>  'form-control']) !!}

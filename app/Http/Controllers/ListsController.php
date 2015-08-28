@@ -33,7 +33,9 @@ class ListsController extends Controller
   public function create()
   {
     $categories = Category::lists('name','id')->all();
-    return view('lists.create')->with(compact('categories'));
+    $selected_categories = null;
+    return view('lists.create')
+      ->with(compact('categories','selected_categories'));
   }
 
   /**
@@ -83,9 +85,12 @@ class ListsController extends Controller
    */
   public function edit($id)
   {
-    $list = Todolist::find($id);
+    $list = Todolist::findOrFail($id);
+    $categories = Category::lists('name','id')->all();
+    $selected_categories = $list->categories()->lists('id')->all();
 
-    return view('lists.edit')->with(compact('list'));
+    return view('lists.edit')
+      ->with(compact('list','categories','selected_categories'));
   }
 
   /**
@@ -103,6 +108,9 @@ class ListsController extends Controller
       'name' => $request->get('name'),
       'description' => $request->get('description')
       ]);
+
+    $categories = $request->get('categories');
+    $list->categories()->sync($categories);
 
     return \Redirect::route('lists.edit', [$list->id])
       ->with('message','List has been updated.');
