@@ -3,6 +3,8 @@
 @section('content')
 <h1>Lists</h1>
 
+@include('app.messages')
+
 @if ($lists->count() > 0)
 <ul>
   @foreach ($lists as $list)

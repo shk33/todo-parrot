@@ -26,4 +26,10 @@
 </p>
 @endif
 
+{!! Form::open(array('route' => array('lists.destroy', $list->id), 'method' => 'DELETE')) !!}
+  <button class="btn btn-danger" type="submit">
+    Delete List
+  </button>
+{!! Form::close() !!}
+
 @endsection

@@ -109,6 +109,8 @@ class ListsController extends Controller
   public function destroy($id)
   {
     Todolist::destroy($id);
-    return \Redirect::route('lists.index');
+
+    return \Redirect::route('lists.index')
+      ->with('message','The list has been deleted!');
   }
 }
