@@ -11,9 +11,18 @@
 |
 */
 
+// Welcome routes
 Route::get('/', 'WelcomeController@index');
-Route::resource('lists', 'ListsController');
+
+// User Registration Routes
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+// Contact Routes
 Route::get('contact',
   ['as' => 'contact', 'uses' => 'AboutController@create']);
 Route::post('contact',
   ['as' => 'contact_store', 'uses' => 'AboutController@store']);
+
+// Todolist routes
+Route::resource('lists', 'ListsController');

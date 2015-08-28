@@ -5,7 +5,9 @@
 @endif
 
 <ul>
-  @foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-  @endforeach
+  <div class="alert aler-danger">
+    @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+    @endforeach
+  </div>
 </ul>
