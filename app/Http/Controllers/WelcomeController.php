@@ -9,6 +9,10 @@ use todoparrot\Http\Controllers\Controller;
 
 class WelcomeController extends Controller
 {
+  function __construct() {
+    $this->middleware('iplogger');
+  }
+
   function index()
   {
     $data = array('name' => 'Yucatan',

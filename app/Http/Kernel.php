@@ -29,5 +29,6 @@ class Kernel extends HttpKernel
         'auth' => \todoparrot\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \todoparrot\Http\Middleware\RedirectIfAuthenticated::class,
+        'iplogger' => \todoparrot\Http\Middleware\RequestLogger::class,
     ];
 }
