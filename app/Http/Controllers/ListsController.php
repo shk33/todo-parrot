@@ -5,6 +5,7 @@ namespace todoparrot\Http\Controllers;
 use Illuminate\Http\Request;
 
 use todoparrot\Http\Requests;
+use todoparrot\Http\Requests\ListFormRequest;
 use todoparrot\Http\Controllers\Controller;
 use todoparrot\Todolist;
 
@@ -30,7 +31,7 @@ class ListsController extends Controller
    */
   public function create()
   {
-      //
+    return view('lists.create');
   }
 
   /**
@@ -39,9 +40,18 @@ class ListsController extends Controller
    * @param  Request  $request
    * @return Response
    */
-  public function store(Request $request)
+  public function store(ListFormRequest $request)
   {
-      //
+    $list = new Todolist(array(
+      'name' => $request->get('name'),
+      'description' => $request->get('description')
+      )
+    );
+
+    $list->save();
+
+    return \Redirect::route('lists.create')
+      ->with('message','Your list has been created!');
   }
 
   /**

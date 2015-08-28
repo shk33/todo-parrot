@@ -3,17 +3,7 @@
 @section('content')
 <h1>Contact TODOParrot</h1>
 
-@if(Session::has('message'))
-  <div class="alert alert-info">
-    {{ Session::get('message') }}
-  </div>
-@endif
-
-<ul>
-  @foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-  @endforeach
-</ul>
+@include('app.messages')
 
 {!! Form::open(array('route' => 'contact_store','class' => 'form' )) !!}
 
