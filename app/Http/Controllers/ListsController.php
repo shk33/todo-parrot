@@ -8,6 +8,7 @@ use todoparrot\Http\Requests;
 use todoparrot\Http\Requests\ListFormRequest;
 use todoparrot\Http\Controllers\Controller;
 use todoparrot\Todolist;
+use todoparrot\Category;
 
 class ListsController extends Controller
 {
@@ -31,7 +32,8 @@ class ListsController extends Controller
    */
   public function create()
   {
-    return view('lists.create');
+    $categories = Category::lists('name','id')->all();
+    return view('lists.create')->with(compact('categories'));
   }
 
   /**
@@ -49,6 +51,11 @@ class ListsController extends Controller
     );
 
     $list->save();
+
+    $categories = $request->get('categories');
+    if (count($categories) > 0) {
+      $list->categories()->attach($categories);
+    }
 
     return \Redirect::route('lists.create')
       ->with('message','Your list has been created!');
