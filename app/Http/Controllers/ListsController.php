@@ -37,7 +37,7 @@ class ListsController extends Controller
   /**
    * Store a newly created resource in storage.
    *
-   * @param  Request  $request
+   * @param  ListFormRequest  $request
    * @return Response
    */
   public function store(ListFormRequest $request)
@@ -75,19 +75,29 @@ class ListsController extends Controller
    */
   public function edit($id)
   {
-      //
+    $list = Todolist::find($id);
+
+    return view('lists.edit')->with(compact('list'));
   }
 
   /**
    * Update the specified resource in storage.
    *
-   * @param  Request  $request
+   * @param  ListFormRequest  $request
    * @param  int  $id
    * @return Response
    */
-  public function update(Request $request, $id)
+  public function update(ListFormRequest $request, $id)
   {
-      //
+    $list = Todolist::find($id);
+
+    $list->update([
+      'name' => $request->get('name'),
+      'description' => $request->get('description')
+      ]);
+
+    return \Redirect::route('lists.edit', [$list->id])
+      ->with('message','List has been updated.');
   }
 
   /**
