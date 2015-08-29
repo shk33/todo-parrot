@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \todoparrot\Console\Commands\Inspire::class,
         \todoparrot\Console\Commands\SlugTodolists::class,
+        \todoparrot\Console\Commands\UpdateCatalog::class,
     ];
 
     /**
