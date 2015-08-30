@@ -27,6 +27,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \todoparrot\Http\Middleware\Authenticate::class,
+        'admin' => \todoparrot\Http\Middleware\AdminAuthentication::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \todoparrot\Http\Middleware\RedirectIfAuthenticated::class,
         'iplogger' => \todoparrot\Http\Middleware\RequestLogger::class,

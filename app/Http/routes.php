@@ -38,3 +38,12 @@ Route::post('contact',
 
 // Todolist routes
 Route::resource('lists', 'ListsController');
+
+// Admin Routes
+Route::group(['prefix'     => 'admin', 
+              'namespace'  => 'Admin',
+              'middleware' => 'admin'],
+function()
+{
+  Route::resource('users', 'UserController');
+});
