@@ -15,5 +15,10 @@
         </div>
       </div>
     </div>
+
+    <div>
+      @yield('footer_js')
+    </div>
+    
   </body>
 </html>
